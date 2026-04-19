@@ -11,7 +11,7 @@ class Homework11Screen extends StatelessWidget{
           width: 300,
           height: 150,
           decoration: const BoxDecoration(
-            color: Colors.amber,
+            color: Colors.blue,
             borderRadius: BorderRadius.all(Radius.circular(16.0))
           ),
         ),
