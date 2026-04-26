@@ -16,6 +16,11 @@ class _Homework11ScreenState extends State<Homework11Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Розмітка єкрана'
+        ),
+      ),
       body: Center(
          child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
