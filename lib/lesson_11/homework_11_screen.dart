@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Homework11Screen extends StatefulWidget {
-  const Homework11Screen({super.key});
+  const Homework11Screen(String id, String name, {super.key});
 
   @override
   State<Homework11Screen> createState() => _Homework11ScreenState();
