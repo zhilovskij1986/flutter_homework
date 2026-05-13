@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_homework/lesson_11/homework_11_screen.dart';
-//import 'package:flutter_homework/lesson_12/homework_12_screen.dart';
-//import 'package:flutter_homework/lesson_13/homework_13_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_homework/lesson_18/homework_%D1%81ubit/counter_cubit.dart';
+import 'package:flutter_homework/lesson_18/homework_bloc/counter_bloc.dart';
 import 'package:flutter_homework/router/app_router.dart';
 import 'package:flutter_homework/router/route_names.dart';
 import 'package:go_router/go_router.dart';
@@ -15,8 +15,12 @@ class FlutterWidgetsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: appRouter
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => CounterCubit()),
+        BlocProvider(create: (context) => CounterBloc()),
+      ],
+      child: MaterialApp.router(routerConfig: appRouter),
     );
   }
 }
@@ -43,13 +47,14 @@ class HomeScreen extends StatelessWidget {
               leading: const Icon(Icons.block),
               title: Text('lesson_11'),
               trailing: Icon(Icons.arrow_forward_ios),
-              onTap: () => context.goNamed(RouteNames.lesson_11.name, 
-              queryParameters: {'id' : 'test-id', 'name' : 'test-name'},
-              extra: {'sortBy' : 'price', 'sortOrder' : 'asc'}
-              ),
+              onTap: () => context.goNamed(
+                RouteNames.lesson_11.name,
+                queryParameters: {'id': 'test-id', 'name': 'test-name'},
+                extra: {'sortBy': 'price', 'sortOrder': 'asc'},
               ),
             ),
-          
+          ),
+
           Card(
             shape: RoundedRectangleBorder(
               side: BorderSide(color: Colors.blue, width: 1),
@@ -59,7 +64,7 @@ class HomeScreen extends StatelessWidget {
               leading: const Icon(Icons.pages),
               title: Text('lesson_12'),
               trailing: Icon(Icons.arrow_forward_ios),
-              onTap: () => context.goNamed(RouteNames.lesson_12.name)
+              onTap: () => context.goNamed(RouteNames.lesson_12.name),
             ),
           ),
           Card(
@@ -71,7 +76,19 @@ class HomeScreen extends StatelessWidget {
               leading: const Icon(Icons.task),
               title: Text('lesson_13'),
               trailing: Icon(Icons.arrow_forward_ios),
-              onTap: () => context.goNamed(RouteNames.lesson_13.name)
+              onTap: () => context.goNamed(RouteNames.lesson_13.name),
+            ),
+          ),
+          Card(
+            shape: RoundedRectangleBorder(
+              side: BorderSide(color: Colors.blue, width: 1),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: ListTile(
+              leading: const Icon(Icons.stream),
+              title: Text('lesson_18'),
+              trailing: Icon(Icons.arrow_forward_ios),
+              onTap: () => context.goNamed(RouteNames.lesson_18.name),
             ),
           ),
         ],
