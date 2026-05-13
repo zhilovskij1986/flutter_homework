@@ -1,6 +1,9 @@
 import 'package:flutter_homework/lesson_11/homework_11_screen.dart';
 import 'package:flutter_homework/lesson_12/homework_12_screen.dart';
 import 'package:flutter_homework/lesson_13/homework_13_screen.dart';
+import 'package:flutter_homework/lesson_18/homework_%D1%81ubit/homework_cubit_screen.dart';
+import 'package:flutter_homework/lesson_18/homework_bloc/homework_bloc_screen.dart';
+import 'package:flutter_homework/lesson_18/state_managment_base_screen.dart';
 import 'package:flutter_homework/main.dart';
 import 'package:flutter_homework/router/rout_paths.dart';
 import 'package:flutter_homework/router/route_names.dart';
@@ -37,6 +40,21 @@ final appRouter = GoRouter(
           path: RoutPaths.lesson_13,
           name: RouteNames.lesson_13.name,
           builder: (context, state) => const WidgetConstrainsTrainingScreen(),
+        ),
+        GoRoute(
+          path: RoutPaths.lesson_18,
+          name: RouteNames.lesson_18.name,
+          builder: (context, state) => const Homework18Screen(),
+        ),
+        GoRoute(
+          path: RoutPaths.cubit,
+          name: RouteNames.cubit.name,
+          builder: (context, state) => const HomeworkCubitScreen(),
+        ),
+        GoRoute(
+          path: RoutPaths.bloc,
+          name: RouteNames.bloc.name,
+          builder: (context, state) => const HomeworkBlocScreen(),
         ),
       ],
     ),
