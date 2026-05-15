@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_homework/lesson_18/homework_%D1%81ubit/counter_cubit.dart';
 import 'package:flutter_homework/lesson_18/homework_bloc/counter_bloc.dart';
+import 'package:flutter_homework/lesson_19/bloc/rate_app_cubit.dart';
 import 'package:flutter_homework/router/app_router.dart';
 import 'package:flutter_homework/router/route_names.dart';
 import 'package:go_router/go_router.dart';
@@ -19,6 +20,7 @@ class FlutterWidgetsApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => CounterCubit()),
         BlocProvider(create: (context) => CounterBloc()),
+        BlocProvider(create: (context) => RateAppCubit()),
       ],
       child: MaterialApp.router(routerConfig: appRouter),
     );
@@ -89,6 +91,18 @@ class HomeScreen extends StatelessWidget {
               title: Text('lesson_18'),
               trailing: Icon(Icons.arrow_forward_ios),
               onTap: () => context.goNamed(RouteNames.lesson_18.name),
+            ),
+          ),
+          Card(
+            shape: RoundedRectangleBorder(
+              side: BorderSide(color: Colors.blue, width: 1),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: ListTile(
+              leading: const Icon(Icons.local_attraction_sharp),
+              title: Text('lesson_19'),
+              trailing: Icon(Icons.arrow_forward_ios),
+              onTap: () => context.goNamed(RouteNames.lesson_19.name),
             ),
           ),
         ],
