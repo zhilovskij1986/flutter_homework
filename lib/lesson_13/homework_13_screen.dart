@@ -338,7 +338,7 @@ class TrainingExample12 extends StatelessWidget {
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        bool isRedTooWide = redContainerWidth >= constraints.maxWidth;        
+        bool isRedTooWide = redContainerWidth >= constraints.maxWidth;
         return Row(
           children: [
             Container(

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_homework/lesson_18/homework_%D1%81ubit/counter_cubit.dart';
 import 'package:flutter_homework/lesson_18/homework_bloc/counter_bloc.dart';
-import 'package:flutter_homework/lesson_19/bloc/rate_app_cubit.dart';
 import 'package:flutter_homework/router/app_router.dart';
 import 'package:flutter_homework/router/route_names.dart';
 import 'package:go_router/go_router.dart';
@@ -19,8 +18,7 @@ class FlutterWidgetsApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => CounterCubit()),
-        BlocProvider(create: (context) => CounterBloc()),
-        BlocProvider(create: (context) => RateAppCubit()),
+        BlocProvider(create: (context) => CounterBloc()),        
       ],
       child: MaterialApp.router(routerConfig: appRouter),
     );

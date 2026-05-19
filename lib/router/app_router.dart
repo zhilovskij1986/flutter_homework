@@ -1,9 +1,11 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_homework/lesson_11/homework_11_screen.dart';
 import 'package:flutter_homework/lesson_12/homework_12_screen.dart';
 import 'package:flutter_homework/lesson_13/homework_13_screen.dart';
 import 'package:flutter_homework/lesson_18/homework_%D1%81ubit/homework_cubit_screen.dart';
 import 'package:flutter_homework/lesson_18/homework_bloc/homework_bloc_screen.dart';
 import 'package:flutter_homework/lesson_18/state_managment_base_screen.dart';
+import 'package:flutter_homework/lesson_19/bloc/rate_app_cubit.dart';
 import 'package:flutter_homework/lesson_19/screens/rate_app_screen.dart';
 import 'package:flutter_homework/main.dart';
 import 'package:flutter_homework/router/rout_paths.dart';
@@ -22,15 +24,17 @@ final appRouter = GoRouter(
           path: RoutPaths.lesson_11,
           name: RouteNames.lesson_11.name,
           builder: (context, state) {
-            final id = state.uri.queryParameters['id']??'null';
-            final name = state.uri.queryParameters['name']??'null';
-            final extra = state.extra is Map<String, dynamic> ? state.extra : null;
+            final id = state.uri.queryParameters['id'] ?? 'null';
+            final name = state.uri.queryParameters['name'] ?? 'null';
+            final extra = state.extra is Map<String, dynamic>
+                ? state.extra
+                : null;
             // ignore: avoid_print
             print(extra);
             // ignore: avoid_print
             print('id: $id , name: $name');
-            return Homework11Screen(id,name);
-          } 
+            return Homework11Screen(id, name);
+          },
         ),
         GoRoute(
           path: RoutPaths.lesson_12,
@@ -60,8 +64,11 @@ final appRouter = GoRouter(
         GoRoute(
           path: RoutPaths.lesson_19,
           name: RouteNames.lesson_19.name,
-          builder: (context, state) => const RateAppScreen(),
-        ),        
+          builder: (context, state) => BlocProvider(
+            create: (context) => RateAppCubit(),
+            child: const RateAppScreen(),
+          ),
+        ),
       ],
     ),
   ],

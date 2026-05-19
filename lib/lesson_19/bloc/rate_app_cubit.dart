@@ -27,6 +27,6 @@ class RateAppCubit extends Cubit<RateAppState> {
   }
 
   void rateAgain() {
-  emit(RateAppState.initial());
-}
+    emit(RateAppState.initial());
+  }
 }

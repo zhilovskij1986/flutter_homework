@@ -8,8 +8,10 @@ class Homework18Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Lesson 18'),
-      backgroundColor: Colors.white24),
+      appBar: AppBar(
+        title: const Text('Lesson 18'),
+        backgroundColor: Colors.white24,
+      ),
       body: Container(
         alignment: Alignment.topCenter,
         padding: const EdgeInsets.all(16),

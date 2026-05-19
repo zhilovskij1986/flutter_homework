@@ -25,32 +25,7 @@ class RateAppScreen extends StatelessWidget {
         listener: (context, state) {
           if (state.status == RateAppStatus.success) {
             context.pop();
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset('assets/images/smalstar.png',width: 18, height: 18),
-                    SizedBox(width: 8),
-                    const Text(
-                      'Your rating has been submitted successfully!',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    SizedBox(width: 8),
-                    Image.asset('assets/images/smalstar.png',width: 18, height: 18),                  
-                  ],
-                ),
-                backgroundColor: const Color(0xFF41A6F4),
-                duration: const Duration(seconds: 3),
-                elevation: 4,
-                behavior: SnackBarBehavior.floating,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),                  
-                ),
-                padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
-                margin: const EdgeInsets.only(bottom: 24, left: 16, right: 16),                
-              ),
-            );
+            ScaffoldMessenger.of(context).showSnackBar(buildSnackBar());
           }
         },
         builder: (context, state) {
@@ -67,19 +42,18 @@ class RateAppScreen extends StatelessWidget {
                 right: 16.0,
               ),
               child: Container(
-      
-                width: 390,
-                height: 230,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 32,
-                ),
+                padding: const EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 114, 193, 250).withValues(alpha: 0.4),
-                  borderRadius: BorderRadius.circular(20),                  
+                  color: const Color.fromARGB(
+                    255,
+                    114,
+                    193,
+                    250,
+                  ).withValues(alpha: 0.4),
+                  borderRadius: BorderRadius.circular(20),
                 ),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
                       isSuccess
@@ -91,7 +65,7 @@ class RateAppScreen extends StatelessWidget {
                         color: Color(0xFF1B3D70),
                       ),
                     ),
-
+                    const SizedBox(height: 24),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(5, (index) {
@@ -113,7 +87,7 @@ class RateAppScreen extends StatelessWidget {
                         );
                       }),
                     ),
-
+                    const SizedBox(height: 24),
                     if (isSuccess) ...[
                       SizedBox(
                         width: double.infinity,
@@ -212,4 +186,29 @@ class RateAppScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+SnackBar buildSnackBar() {
+  return SnackBar(
+    content: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset('assets/images/smalstar.png', width: 18, height: 18),
+        SizedBox(width: 8),
+        const Text(
+          'Your rating has been submitted successfully!',
+          style: TextStyle(color: Colors.white),
+        ),
+        SizedBox(width: 8),
+        Image.asset('assets/images/smalstar.png', width: 18, height: 18),
+      ],
+    ),
+    backgroundColor: const Color(0xFF41A6F4),
+    duration: const Duration(seconds: 3),
+    elevation: 4,
+    behavior: SnackBarBehavior.floating,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+    padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+    margin: const EdgeInsets.only(bottom: 24, left: 16, right: 16),
+  );
 }
