@@ -21,7 +21,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
- 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,14 +45,14 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
-            onPressed: ()=> context.read<CounterCubit>().increment(),
+            onPressed: () => context.read<CounterCubit>().increment(),
             tooltip: 'Increment',
             child: const Icon(Icons.add),
           ),
           SizedBox(width: 10),
 
           FloatingActionButton(
-            onPressed: ()=> context.read<CounterCubit>().decrement(),
+            onPressed: () => context.read<CounterCubit>().decrement(),
             tooltip: 'Dicrement',
             child: const Icon(Icons.remove),
           ),

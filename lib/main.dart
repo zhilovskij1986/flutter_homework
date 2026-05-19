@@ -18,7 +18,7 @@ class FlutterWidgetsApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => CounterCubit()),
-        BlocProvider(create: (context) => CounterBloc()),
+        BlocProvider(create: (context) => CounterBloc()),        
       ],
       child: MaterialApp.router(routerConfig: appRouter),
     );
@@ -89,6 +89,18 @@ class HomeScreen extends StatelessWidget {
               title: Text('lesson_18'),
               trailing: Icon(Icons.arrow_forward_ios),
               onTap: () => context.goNamed(RouteNames.lesson_18.name),
+            ),
+          ),
+          Card(
+            shape: RoundedRectangleBorder(
+              side: BorderSide(color: Colors.blue, width: 1),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: ListTile(
+              leading: const Icon(Icons.local_attraction_sharp),
+              title: Text('lesson_19'),
+              trailing: Icon(Icons.arrow_forward_ios),
+              onTap: () => context.goNamed(RouteNames.lesson_19.name),
             ),
           ),
         ],
