@@ -9,4 +9,5 @@ enum RouteNames {
   ratecubit,
   ratescreen,
   lesson_21,
+  lesson_22,
 }

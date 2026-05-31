@@ -9,4 +9,5 @@ abstract class RoutPaths {
   static const String ratecubit = 'lesson_18/ratecubit';
   static const String ratescreen = 'lesson_18/ratescreen';
   static const String lesson_21 = 'lesson_21';
+  static const String lesson_22 = 'lesson_22';
 }
