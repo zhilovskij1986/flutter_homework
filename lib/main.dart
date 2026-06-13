@@ -129,6 +129,18 @@ class HomeScreen extends StatelessWidget {
               onTap: () => context.goNamed(RouteNames.lesson_22.name),
             ),
           ),
+          Card(
+            shape: RoundedRectangleBorder(
+              side: BorderSide(color: Colors.blue, width: 1),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: ListTile(
+              leading: const Icon(Icons.park),
+              title: Text('lesson_25'),
+              trailing: Icon(Icons.arrow_forward_ios),
+              onTap: () => context.goNamed(RouteNames.lesson_25.name),
+            ),
+          )
         ],
       ),
     );

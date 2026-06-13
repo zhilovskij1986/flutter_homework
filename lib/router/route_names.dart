@@ -10,4 +10,5 @@ enum RouteNames {
   ratescreen,
   lesson_21,
   lesson_22,
+  lesson_25,
 }

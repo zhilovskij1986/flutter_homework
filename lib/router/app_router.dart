@@ -11,6 +11,7 @@ import 'package:flutter_homework/lesson_21/animatedball.dart';
 import 'package:flutter_homework/lesson_22/error_handling_homework/data/repository/fake_user_repository.dart';
 import 'package:flutter_homework/lesson_22/error_handling_homework/presentation/cubit/user_profile_cubit.dart';
 import 'package:flutter_homework/lesson_22/error_handling_homework/presentation/ui/screens/user_profile_homework_screen.dart';
+import 'package:flutter_homework/lesson_25/cheque_screen.dart';
 import 'package:flutter_homework/main.dart';
 import 'package:flutter_homework/router/rout_paths.dart';
 import 'package:flutter_homework/router/route_names.dart';
@@ -86,6 +87,11 @@ final appRouter = GoRouter(
             child: const UserProfileHomeworkScreen(),
             );
           },
+        ),
+         GoRoute(
+          path: RoutPaths.lesson_25,
+          name: RouteNames.lesson_25.name,
+          builder: (context, state) => const ChequeScreen(),
         ),
       ],
     ),
