@@ -1,4 +1,3 @@
-import 'package:flutter_homework/lesson_25/cheque_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'cheque_models.g.dart';
@@ -26,16 +25,7 @@ class ChequeResponseDto {
   });
 
   factory ChequeResponseDto.fromJson(Map<String, dynamic> json) =>
-      _$ChequeResponseDtoFromJson(json);
-
-  ChequeEntity toEntity() {
-    return ChequeEntity(
-      chequeId: chequeHeader.chequeId,
-      totalAmount: chequeHeader.sumReg,
-      items: chequeLines.map((line) => line.lagerNameUA).toList(),
-      prediction: chPrediction,
-    );
-  }
+      _$ChequeResponseDtoFromJson(json);  
 }
 
 @JsonSerializable(createToJson: false)
